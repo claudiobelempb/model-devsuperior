@@ -89,3 +89,26 @@ INSERT INTO tb_resource (code, title, description, position, img_url, type, offe
 INSERT INTO tb_section (code, title, description, position, img_url, resource_id, prerequisite_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'Capítulo 1','Neste capítulo vamos começar', 1, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, null, NOW(), 0);
 INSERT INTO tb_section (code, title, description, position, img_url, resource_id, prerequisite_id, created_at, status) VALUES ('946e72ea-7f99-47e3-9e9f-02cc39d79bw9', 'Capítulo 2', 'Neste capítulo vamos continuar', 2, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 1, NOW(), 0);
 INSERT INTO tb_section (code, title, description, position, img_url, resource_id, prerequisite_id, created_at, status) VALUES ('946e72ea-7f99-48e3-9e9f-02cc39d09bw9', 'Capítulo 3', 'Neste capítulo vamos finalizar', 3, 'https://cdn.pixabay.com/photo/2018/03/22/10/55/training-course-3250007_1280.jpg', 1, 2, NOW(), 0);
+
+--tb_enrolment
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update, created_at, status) VALUES (1, 1, '2020-11-20T13:00:00Z', null, 'true', 'false', NOW(), 0);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_moment, refund_moment, available, only_update, created_at, status) VALUES (2, 1, '2020-11-20T13:00:00Z', null, 'true', 'false', NOW(), 0);
+
+--tb_lesson
+INSERT INTO tb_lesson (code, title, position, section_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'Aula 1 do capítulo 1', 1, 1, NOW(), 0);
+INSERT INTO tb_lesson (code, title, position, section_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'Aula 2 do capítulo 1', 2, 1, NOW(), 0);
+INSERT INTO tb_lesson (code, title, position, section_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'Aula 3 do capítulo 1', 3, 1, NOW(), 0);
+INSERT INTO tb_lesson (code, title, position, section_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'Tarefa do capítulo 1', 4, 1, NOW(), 0);
+--tb_content
+INSERT INTO tb_content (id, text_content, video_url) VALUES (1, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=sqbqoR-lMf8');
+INSERT INTO tb_content (id, text_content, video_url) VALUES (2, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=sqbqoR-lMf8');
+INSERT INTO tb_content (id, text_content, video_url) VALUES (3, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=sqbqoR-lMf8');
+--tb_task
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (4, 'Fazer um trabalho legal', 5, 4, 1.0, '2020-11-25T13:00:00Z');
+
+--tb_lessons_done_association
+INSERT INTO tb_lessons_done_association (lesson_id, user_id, offer_id) VALUES (1, 1, 1);
+INSERT INTO tb_lessons_done_association (lesson_id, user_id, offer_id) VALUES (2, 1, 1);
+
+--tb_deliver
+INSERT INTO tb_deliver (code, url, feedback, correct_Count, lesson_id, user_id, offer_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'https://github.com/devsuperior/bds-dslearn', 0, null, 4, 1, 1, NOW(), 0);

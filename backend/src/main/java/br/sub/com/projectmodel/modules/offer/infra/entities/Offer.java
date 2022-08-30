@@ -2,7 +2,7 @@ package br.sub.com.projectmodel.modules.offer.infra.entities;
 
 import br.sub.com.projectmodel.modules.course.infra.entities.Course;
 import br.sub.com.projectmodel.modules.resource.infra.entities.Resource;
-import br.sub.com.projectmodel.shared.enums.EnumStatus;
+import br.sub.com.projectmodel.shared.enums.TypeStatus;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -28,7 +28,7 @@ public class Offer implements Serializable {
   private Instant startMoment;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant endMoment;
-  private EnumStatus status;
+  private TypeStatus status;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -44,7 +44,7 @@ public class Offer implements Serializable {
 
   public Offer(){}
 
-  public Offer(Long id, String code, String edition, Instant startMoment, Instant endMoment, EnumStatus status,
+  public Offer(Long id, String code, String edition, Instant startMoment, Instant endMoment, TypeStatus status,
                Instant createdAt, Instant updatedAt, Course course) {
     this.id = id;
     this.code = code;
@@ -97,7 +97,7 @@ public class Offer implements Serializable {
     this.endMoment = endMoment;
   }
 
-  public EnumStatus getStatus() {
+  public TypeStatus getStatus() {
     return status;
   }
 
@@ -125,7 +125,7 @@ public class Offer implements Serializable {
   public void prePersist(){
     code = UUID.randomUUID().toString();
     createdAt = Instant.now();
-    status = EnumStatus.ENABLED;
+    status = TypeStatus.ENABLED;
   }
 
   @PreUpdate

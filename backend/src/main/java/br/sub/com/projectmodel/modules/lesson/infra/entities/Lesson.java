@@ -1,20 +1,20 @@
-package br.sub.com.projectmodel.modules.section.infra.entities;
+package br.sub.com.projectmodel.modules.lesson.infra.entities;
 
-import br.sub.com.projectmodel.modules.lesson.infra.entities.Lesson;
-import br.sub.com.projectmodel.modules.resource.infra.entities.Resource;
+import br.sub.com.projectmodel.modules.deliver.infra.entities.Deliver;
+import br.sub.com.projectmodel.modules.enrollment.infra.entities.Enrollment;
+import br.sub.com.projectmodel.modules.section.infra.entities.Section;
 import br.sub.com.projectmodel.shared.enums.TypeStatus;
 
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
-@Table(name = "tb_section")
-public class Section implements Serializable {
+@Table(name = "tb_lesson")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Lesson implements Serializable {
   @Serial
   private static final long serialVersionUID = 1L;
 
@@ -23,9 +23,7 @@ public class Section implements Serializable {
   private Long id;
   private String code;
   private String title;
-  private String description;
   private Integer position;
-  private String imgUrl;
   private TypeStatus status;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
@@ -33,32 +31,35 @@ public class Section implements Serializable {
   private Instant updatedAt;
 
   @ManyToOne
-  @JoinColumn(name = "resource_id")
-  private Resource resource;
+  @JoinColumn(name = "section_id")
+  private Section section;
 
-  /*uma auto associal com tb_section unilateral*/
-  @ManyToOne
-  @JoinColumn(name = "prerequisite_id")
-  private Section prerequisite;
+  @ManyToMany
+  @JoinTable(
+    name = "tb_lessons_done_association",
+    joinColumns = @JoinColumn(name = "lesson_id"),
+    inverseJoinColumns = {
+      @JoinColumn(name = "user_id"),
+      @JoinColumn(name = "offer_id")
+    }
+  )
+  private final Set<Enrollment> enrollmentsDone = new HashSet<>();
 
-  @OneToMany(mappedBy = "section")
-  private final List<Lesson> lessons = new ArrayList<>();
+  @OneToMany(mappedBy = "lesson")
+  private final List<Deliver> delivers = new ArrayList<>();
 
-  public Section(){}
+  public Lesson(){}
 
-  public Section(Long id, String code, String title, String description, Integer position, String imgUrl,
-                 TypeStatus status, Instant createdAt, Instant updatedAt, Resource resource, Section prerequisite) {
+  public Lesson(Long id, String code, String title, Integer position, TypeStatus status, Instant createdAt,
+                Instant updatedAt, Section section) {
     this.id = id;
     this.code = code;
     this.title = title;
-    this.description = description;
     this.position = position;
-    this.imgUrl = imgUrl;
     this.status = status;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
-    this.resource = resource;
-    this.prerequisite = prerequisite;
+    this.section = section;
   }
 
   public Long getId() {
@@ -85,28 +86,12 @@ public class Section implements Serializable {
     this.title = title;
   }
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   public Integer getPosition() {
     return position;
   }
 
   public void setPosition(Integer position) {
     this.position = position;
-  }
-
-  public String getImgUrl() {
-    return imgUrl;
-  }
-
-  public void setImgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
   }
 
   public TypeStatus getStatus() {
@@ -125,24 +110,16 @@ public class Section implements Serializable {
     return updatedAt;
   }
 
-  public Resource getResource() {
-    return resource;
+  public Section getSection() {
+    return section;
   }
 
-  public void setResource(Resource resource) {
-    this.resource = resource;
+  public void setSection(Section section) {
+    this.section = section;
   }
 
-  public Section getPrerequisite() {
-    return prerequisite;
-  }
-
-  public void setPrerequisite(Section prerequisite) {
-    this.prerequisite = prerequisite;
-  }
-
-  public List<Lesson> getLessons() {
-    return lessons;
+  public Set<Enrollment> getEnrollmentsDone() {
+    return enrollmentsDone;
   }
 
   @PrePersist
@@ -162,13 +139,13 @@ public class Section implements Serializable {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    Section section = (Section) o;
+    Lesson lesson = (Lesson) o;
 
-    return id.equals(section.id);
+    return Objects.equals(id, lesson.id);
   }
 
   @Override
   public int hashCode() {
-    return id.hashCode();
+    return id != null ? id.hashCode() : 0;
   }
 }
