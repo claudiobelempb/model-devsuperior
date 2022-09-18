@@ -31,11 +31,41 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
 
 
   private static final String[] PERMISSION_PUBLIC = {
-    "oauth/token",
+    "/oauth/token/**",
     "/h2-console/**",
   };
 
+  /*
+  if(responseCode.code >= 200 && responseCode.code < 300 {
+    var json = JSON.parse(responseBody);
+    postman.setEnvironmentVariable('token', json.access_token);
+    postman.setEnvironmentVariable('token', json.refresh_token);
+  }
+  */
+
   private static final String[] PERMISSION_GET_PUBLIC = {
+    "/user/notifications",
+  };
+
+  private static final String[] PERMISSION_GET_PRIVATE = {
+    "/users",
+    "/products",
+    "/categories/**",
+    "/movies",
+    "/scores",
+    "/departments",
+    "/employees",
+    "/roles",
+    "/notifications",
+    "/notifications/**",
+  };
+
+  private static final String[] PERMISSION_POST_PUBLIC = {
+    "/users",
+  };
+
+  private static final String[] PERMISSION_POST_PRIVATE = {
+    "/users",
     "/products",
     "/categories",
     "/movies",
@@ -43,76 +73,42 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
     "/departments",
     "/employees",
     "/roles",
-    "/user/notifications"
-  };
-
-  private static final String[] PERMISSION_GET_PRIVATE = {
-    "/products/**",
-    "/categories/**",
-    "/movies/**",
-    "/scores/**",
-    "/departments/**",
-    "/employees/**",
-    "/roles/**",
-  };
-
-  private static final String[] PERMISSION_POST_PUBLIC = {
-    "/user",
-  };
-
-  private static final String[] PERMISSION_POST_PRIVATE = {
-    "/products/**",
-    "/categories/**",
-    "/movies/**",
-    "/scores/**",
-    "/departments/**",
-    "/employees/**",
-    "/roles/**",
+    "/notifications",
   };
 
   private static final String[] PERMISSION_PUT_PRIVATE = {
-    "/products/**",
-    "/categories/**",
-    "/movies/**",
-    "/scores/**",
-    "/departments/**",
-    "/employees/**",
-    "/roles/**",
+    "/users",
+    "/products",
+    "/categories",
+    "/movies",
+    "/scores",
+    "/departments",
+    "/employees",
+    "/roles",
+    "/notifications",
   };
 
   private static final String[] PERMISSION_DELETE_PRIVATE = {
-    "/products/**",
-    "/categories/**",
-    "/movies/**",
-    "/scores/**",
-    "/departments/**",
-    "/employees/**",
-    "/roles/**",
+    "/users",
+    "/products",
+    "/categories",
+    "/movies",
+    "/scores",
+    "/departments",
+    "/employees",
+    "/roles",
+    "/notifications",
   };
 
   private static final String[] PERMISSION_PATCH_PRIVATE = {
-    "/products/status/**",
-    "/categories/status/**",
-    "/movies/status/**",
-    "/scores/status/**",
-    "/departments/status/**",
-    "/employees/status/**",
-    "/roles/status/**",
+    "/products/status",
+    "/categories/status",
+    "/movies/status",
+    "/scores/status",
+    "/departments/status",
+    "/employees/status",
+    "/roles/status",
   };
-
-//  private static final String[] USER_OR_ADMIN = {
-//    "/user/notifications"
-//  };
-
-  private static final String[] PERMISSION_ADMIN = {
-    "/users/**",
-    "/notifications"
-  };
-
-//  private static final String[] ADMIN = {
-//    "/api/users/notifications",
-//    "/api/users/status"
-//  };
 
   @Override
   public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -131,14 +127,15 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
       .antMatchers(PERMISSION_PUBLIC).permitAll()
 //      .antMatchers(HttpMethod.GET, USER_OR_ADMIN).permitAll()
 //      .antMatchers(OPERATOR_OR_ADMIN).hasAnyRole("OPERATOR", "ADMIN")
-      .antMatchers(HttpMethod.GET, PERMISSION_GET_PUBLIC).hasAnyRole("OPERATOR")
+      .antMatchers(HttpMethod.GET, PERMISSION_GET_PUBLIC).permitAll()
       .antMatchers(HttpMethod.GET, PERMISSION_GET_PRIVATE).hasAnyRole("ADMIN")
+      .antMatchers(HttpMethod.POST, PERMISSION_POST_PUBLIC).permitAll()
       .antMatchers(HttpMethod.POST, PERMISSION_POST_PRIVATE).hasAnyRole("ADMIN")
       .antMatchers(HttpMethod.PUT, PERMISSION_PUT_PRIVATE).hasAnyRole("ADMIN")
       .antMatchers(HttpMethod.DELETE, PERMISSION_DELETE_PRIVATE).hasAnyRole("ADMIN")
       .antMatchers(HttpMethod.PATCH, PERMISSION_PATCH_PRIVATE).hasAnyRole("ADMIN")
-      .antMatchers(PERMISSION_ADMIN).hasRole("ADMIN")
-//      .anyRequest().hasAnyRole("ADMIN")
+      //.antMatchers(PERMISSION_ADMIN).hasRole("ADMIN")
+      //.anyRequest().hasAnyRole("ADMIN")
       .anyRequest().authenticated();
 
     http.cors().configurationSource(corsConfigurationSource());

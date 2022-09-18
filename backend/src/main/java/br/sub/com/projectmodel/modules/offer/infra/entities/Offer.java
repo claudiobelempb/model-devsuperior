@@ -2,6 +2,7 @@ package br.sub.com.projectmodel.modules.offer.infra.entities;
 
 import br.sub.com.projectmodel.modules.course.infra.entities.Course;
 import br.sub.com.projectmodel.modules.resource.infra.entities.Resource;
+import br.sub.com.projectmodel.modules.topic.infra.entities.Topic;
 import br.sub.com.projectmodel.shared.enums.TypeStatus;
 
 import javax.persistence.*;
@@ -41,6 +42,9 @@ public class Offer implements Serializable {
 
   @OneToMany(mappedBy = "offer")
   private final List<Resource> resources = new ArrayList<>();
+
+  @OneToMany(mappedBy = "offer")
+  private final List<Topic> topics = new ArrayList<>();
 
   public Offer(){}
 
@@ -119,6 +123,10 @@ public class Offer implements Serializable {
 
   public List<Resource> getResources() {
     return resources;
+  }
+
+  public List<Topic> getTopics() {
+    return topics;
   }
 
   @PrePersist

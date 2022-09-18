@@ -22,7 +22,7 @@ public class AppUserDetailsService implements UserDetailsService {
     User entity = repository.findByEmail(username);
 
     if(entity == null) {
-      logger.error(AppExceptionConstants.EMAIL_NOT_FOUND + username);
+      logger.error(AppExceptionConstants.USER_NOT_FOUND + username);
       throw new UsernameNotFoundException(AppExceptionConstants.EMAIL_NOT_FOUND);
     }
     logger.info(AppExceptionConstants.USER_FOUND + username);

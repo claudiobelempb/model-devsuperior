@@ -35,6 +35,8 @@ public class Notification implements Serializable {
   @JoinColumn(name = "user_id")
   private User user;
 
+  public Notification(){}
+
   public Notification(Long id, String code, String text, boolean read, String route, Instant createdAt,
                       Instant updatedAt,
                       EnumStatus status, User user) {

@@ -2,7 +2,6 @@ package br.sub.com.projectmodel.modules.user.infra.entities;
 
 import br.sub.com.projectmodel.modules.address.infra.entities.Address;
 import br.sub.com.projectmodel.modules.notification.infra.entities.Notification;
-import br.sub.com.projectmodel.modules.offer.infra.entities.Offer;
 import br.sub.com.projectmodel.modules.role.infra.entities.Role;
 import br.sub.com.projectmodel.shared.enums.EnumStatus;
 import org.springframework.security.core.GrantedAuthority;
@@ -40,9 +39,7 @@ public class User implements UserDetails, Serializable {
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant updatedAt;
 
-  /*Um course pode ter 0 ou mais offers uma para nuitos*/
-  @OneToMany(mappedBy = "user")
-  private final List<Notification> notifications = new ArrayList<>();
+
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
@@ -51,6 +48,10 @@ public class User implements UserDetails, Serializable {
     inverseJoinColumns = @JoinColumn(name = "role_id")
   )
   private final Set<Role> roles = new HashSet<>();
+
+  /*Um course pode ter 0 ou mais offers uma para nuitos*/
+  @OneToMany(mappedBy = "user")
+  private final List<Notification> notifications = new ArrayList<>();
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(

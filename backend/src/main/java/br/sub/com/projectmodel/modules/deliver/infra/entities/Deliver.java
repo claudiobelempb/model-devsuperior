@@ -1,6 +1,5 @@
 package br.sub.com.projectmodel.modules.deliver.infra.entities;
 
-import br.sub.com.projectmodel.modules.course.infra.entities.Course;
 import br.sub.com.projectmodel.modules.enrollment.infra.entities.Enrollment;
 import br.sub.com.projectmodel.modules.lesson.infra.entities.Lesson;
 import br.sub.com.projectmodel.shared.enums.TypeDeliver;
@@ -149,11 +148,14 @@ public class Deliver implements Serializable {
 
     Deliver deliver = (Deliver) o;
 
-    return id.equals(deliver.id);
+    if (!id.equals(deliver.id)) return false;
+    return code.equals(deliver.code);
   }
 
   @Override
   public int hashCode() {
-    return id.hashCode();
+    int result = id.hashCode();
+    result = 31 * result + code.hashCode();
+    return result;
   }
 }

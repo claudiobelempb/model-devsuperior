@@ -4,11 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8234e7b4-584c-4e39-8f2e-3dfa10434632" name="Changes" comment="" />
+    <list default="true" id="8234e7b4-584c-4e39-8f2e-3dfa10434632" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/dto/DeliverDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/dto/DeliverRevisionUpdateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/repositories/DeliverRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/usecase/DeliverRevisionUpdate/DeliverRevisionUpdateResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/usecase/DeliverRevisionUpdate/DeliverRevisionUpdateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/repositories/EnrollmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/lesson/infra/repositories/LessonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/dto/NotificationDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/repositories/NotificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindAll/NotificationFindAllResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindAll/NotificationFindAllService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindById/NotificationFindByIdResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindById/NotificationFindByIdService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationUser/NotificationUserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationUser/NotificationUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/repositories/ReplyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/repositories/TopicRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserAuthService/UserAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/entities/Deliver.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/entities/Deliver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/entities/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/entities/Enrollment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/entities/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/entities/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/offer/infra/entities/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/offer/infra/entities/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/entities/Reply.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/entities/Reply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/entities/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/entities/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/infra/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/infra/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserDetailsService/AppUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserDetailsService/AppUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserFindById/UserFindByIdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserFindById/UserFindByIdService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/shared/config/AppResourceServerConfigurerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/shared/config/AppResourceServerConfigurerAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/import.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -23,13 +56,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/surb/Documents/workspace-projects/devsuperior/project-model/backend"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/surb/Documents/workspace-projects/devsuperior/project-model/backend&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,5 +73,16 @@
       <updated>1658299977845</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

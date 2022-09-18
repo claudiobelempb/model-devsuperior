@@ -112,3 +112,22 @@ INSERT INTO tb_lessons_done_association (lesson_id, user_id, offer_id) VALUES (2
 
 --tb_deliver
 INSERT INTO tb_deliver (code, url, feedback, correct_Count, lesson_id, user_id, offer_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d09bw9', 'https://github.com/devsuperior/bds-dslearn', 0, null, 4, 1, 1, NOW(), 0);
+
+--tb_topic
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('946e72ea-7v99-47e3-9e9f-02cc39d09bw9','Título do tópico 1', 'Corpo do tópico 1', 1, 1, 1, NOW(), 0);
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc39d59bw9','Título do tópico 2', 'Corpo do tópico 2', 2, 1, 1, NOW(), 0);
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cc3wd09bw9','Título do tópico 3', 'Corpo do tópico 3', 2, 1, 1, NOW(), 0);
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('946e72ea-7s99-47e3-9e9f-02cq39d09bw9','Título do tópico 4', 'Corpo do tópico 4', 1, 1, 2, NOW(), 0);
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('946e72et-7s99-47e3-9e9f-02cc39d09bw9','Título do tópico 5', 'Corpo do tópico 5', 1, 1, 2, NOW(), 0);
+INSERT INTO tb_topic (code, title, body, author_id, offer_id, lesson_id, created_at, status) VALUES ('986e72ea-7s99-47e3-9e9f-02cc39d09bw9','Título do tópico 6', 'Corpo do tópico 6', 2, 1, 3, NOW(), 0);
+
+--tb_topic_likes_association
+INSERT INTO tb_topic_likes_association (topic_id, user_id) VALUES (1, 2);
+INSERT INTO tb_topic_likes_association (topic_id, user_id) VALUES (2, 1);
+
+--tb_reply
+INSERT INTO tb_reply (code, body, topic_id, author_id, created_at, status) VALUES ('946e72ea-7y99-47e3-9e9f-02cc39d09bw9','Tente reiniciar o computador', 1, 2, NOW(), 0);
+INSERT INTO tb_reply (code, body, topic_id, author_id, created_at, status) VALUES ('946e72ea-7s99-87e3-9e9f-02cc39d09bw9','Deu certo, valeu!', 1, 1, NOW(), 0);
+
+--tb_reply_likes_association
+INSERT INTO tb_reply_likes_association (reply_id, user_id) VALUES (1, 1);
