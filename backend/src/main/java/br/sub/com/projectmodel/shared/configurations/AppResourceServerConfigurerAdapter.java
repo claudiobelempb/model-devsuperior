@@ -1,4 +1,4 @@
-package br.sub.com.projectmodel.shared.config;
+package br.sub.com.projectmodel.shared.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -45,10 +45,12 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
 
   private static final String[] PERMISSION_GET_PUBLIC = {
     "/user/notifications",
+    "/products/**",
   };
 
   private static final String[] PERMISSION_GET_PRIVATE = {
-    "/users",
+    "/users/**",
+    "/client/**",
     "/products",
     "/categories/**",
     "/movies",
@@ -65,6 +67,7 @@ public class AppResourceServerConfigurerAdapter extends ResourceServerConfigurer
   };
 
   private static final String[] PERMISSION_POST_PRIVATE = {
+    "/clients",
     "/users",
     "/products",
     "/categories",

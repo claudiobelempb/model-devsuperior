@@ -1,4 +1,4 @@
-package br.sub.com.projectmodel.modules.product.usecase.Product.ProductFindAllPage;
+package br.sub.com.projectmodel.modules.product.usecase.Product.ProductSpecification;
 
 import br.sub.com.projectmodel.modules.product.dto.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/products")
-public class ProductFindAllPageResource {
+public class ProductSpecificationResource {
 
   @Autowired
-  private ProductFindAllPageService service;
+  private ProductSpecificationService service;
 
-  @GetMapping(value = "/page")
-  public ResponseEntity<Page<ProductDTO>> handle(@RequestParam(value = "categoryId", defaultValue = "0") Long categoryId,
-                                                 @RequestParam(value = "name", defaultValue = "") String name,
-                                                 Pageable pageable)
-  {
+  @GetMapping(value = "/specification")
+  public ResponseEntity<Page<ProductDTO>> handle(ProductDTO filter, Pageable pageable) {
     /*PARAMETRISE: page, size, direction, sort*/
-    Page<ProductDTO> dto = service.execute(categoryId, name.trim(), pageable);
+    Page<ProductDTO> dto = service.execute(filter, pageable);
     return ResponseEntity.ok().body(dto);
   }
 

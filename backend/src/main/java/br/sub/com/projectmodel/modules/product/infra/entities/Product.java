@@ -149,4 +149,13 @@ public class Product implements Serializable {
   public int hashCode() {
     return Objects.hash(id);
   }
+
+//  public boolean hasCategory(Long categoryId){
+//    for(ProductCategory category: categories){
+//      if(category.getId().equals(categoryId)){
+//        return true;
+//      }
+//    }
+//    return false;
+//  }
 }

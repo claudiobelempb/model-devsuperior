@@ -60,12 +60,12 @@ INSERT INTO tb_product_image_association (product_id, image_id) VALUES (7, 3);
 
 --tb_address
 INSERT INTO tb_address (code, cep, street, number, district, city, uf, phone, created_at, status) VALUES('946e72ea-7f99-47e3-9e9f-02cc39d09b89', '58255-000', 'Rua Fávio Ribeiro', '192', 'Centro', 'Belém', 'PB', '83999126797', NOW(), 0);
+INSERT INTO tb_address (code, cep, street, number, district, city, uf, phone, created_at, status) VALUES('946e72e5-7f99-47e3-9e9f-02cc39d09b89', '58255-000', 'Rua Fávio Ribeiro', '192', 'Centro', 'Belém', 'PB', '83999126797', NOW(), 0);
 
 --tb_user_address_association
 INSERT INTO tb_user_address_association (user_id, address_id) VALUES (1, 1);
-INSERT INTO tb_user_address_association (user_id, address_id) VALUES (2, 1);
-INSERT INTO tb_user_address_association (user_id, address_id) VALUES (3, 1);
-INSERT INTO tb_user_address_association (user_id, address_id) VALUES (4, 1);
+INSERT INTO tb_user_address_association (user_id, address_id) VALUES (1, 2);
+
 
 --tb_notification
 INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('946d72ea-7f99-47e3-9e9f-02cc59d09b89', 'Primeiro feedback de tarefa: favor revisar', 'true', '/offers/1/resource/1/sections/1', 1, NOW(), 0);
@@ -131,3 +131,15 @@ INSERT INTO tb_reply (code, body, topic_id, author_id, created_at, status) VALUE
 
 --tb_reply_likes_association
 INSERT INTO tb_reply_likes_association (reply_id, user_id) VALUES (1, 1);
+
+--tb_aset
+INSERT INTO tb_seat (name) VALUES ('C4');
+INSERT INTO tb_seat (name) VALUES ('G4');
+INSERT INTO tb_seat (name) VALUES ('K9');
+INSERT INTO tb_seat (name) VALUES ('K8');
+
+--tb_client
+INSERT INTO tb_client (name, seat_id) VALUES ('Claudio Cadoso', 1);
+INSERT INTO tb_client (name, seat_id) VALUES ('Gorete Cadoso', 2);
+INSERT INTO tb_client (name, seat_id) VALUES ('Kaike Cadoso', 3);
+INSERT INTO tb_client (name, seat_id) VALUES ('Kevin Cadoso', 4);

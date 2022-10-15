@@ -1,36 +1,32 @@
-package br.sub.com.projectmodel.modules.product.usecase.Product.ProductFindAllPage;
+package br.sub.com.projectmodel.modules.product.usecase.Product.ProductSpecification;
 
 import br.sub.com.projectmodel.modules.product.dto.ProductDTO;
 import br.sub.com.projectmodel.modules.product.infra.entities.Product;
 import br.sub.com.projectmodel.modules.product.infra.entities.ProductCategory;
 import br.sub.com.projectmodel.modules.product.infra.repositories.ProductCategoryRepository;
 import br.sub.com.projectmodel.modules.product.infra.repositories.ProductRepository;
+import br.sub.com.projectmodel.modules.product.specification.ProductSpecification.ProductSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class ProductFindAllPageService {
+public class ProductSpecificationService {
 
   @Autowired
   private ProductRepository productRepository;
 
   @Autowired
-  private ProductCategoryRepository categoryRepository;
+  private ProductSpecification specification;
 
   @Transactional(readOnly = true)
-  public Page<ProductDTO> execute( Long categoryID, String name, Pageable pageable){
-    List<ProductCategory> categories = (categoryID == 0) ? null :
-      List.of(categoryRepository.getReferenceById(categoryID));
-    Page<Product> entity = productRepository.search(categories, name, pageable);
-    productRepository.findProductsWithCategories(entity.getContent());
-    productRepository.findProductsWithImages(entity.getContent());
-    return entity.map(dto -> new ProductDTO(dto, dto.getCategories(), dto.getImages()));
+  public Page<ProductDTO> execute( ProductDTO filter, Pageable pageable){
+    Page<Product> entity = productRepository.findAll(specification.execute(filter), pageable);
+    return entity.map(dto -> new ProductDTO(dto));
   }
 
 }

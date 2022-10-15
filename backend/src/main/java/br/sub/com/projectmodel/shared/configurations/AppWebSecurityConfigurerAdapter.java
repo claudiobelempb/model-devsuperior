@@ -1,4 +1,4 @@
-package br.sub.com.projectmodel.shared.config;
+package br.sub.com.projectmodel.shared.configurations;
 
 
 import br.sub.com.projectmodel.modules.user.usecase.UserDetailsService.AppUserDetailsService;
