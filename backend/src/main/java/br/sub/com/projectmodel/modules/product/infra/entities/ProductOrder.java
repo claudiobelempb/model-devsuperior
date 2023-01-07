@@ -1,37 +1,40 @@
-package br.sub.com.projectmodel.modules.role.infra.entities;
+package br.sub.com.projectmodel.modules.product.infra.entities;
 
+import br.sub.com.projectmodel.modules.user.infra.entities.User;
 import br.sub.com.projectmodel.shared.enums.EnumStatus;
 
 import javax.persistence.*;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
-import java.util.Objects;
-
 @Entity
-@Table(name = "tb_role")
-public class Role implements Serializable {
-
+@Table(name = "tb_product_order")
+public class ProductOrder implements Serializable {
   @Serial
   private static final long serialVersionUID = 1L;
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String code;
-  private String authority;
+  private Double total;
+
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private User user;
   private EnumStatus status;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant createdAt;
   @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
   private Instant updatedAt;
 
-  public Role(){}
+  public ProductOrder(){}
 
-  public Role(Long id, String code, String authority, EnumStatus status, Instant createdAt, Instant updatedAt) {
+  public ProductOrder(Long id, String code, Double total, User user, EnumStatus status, Instant createdAt,
+                      Instant updatedAt) {
     this.id = id;
     this.code = code;
-    this.authority = authority;
+    this.total = total;
+    this.user = user;
     this.status = status;
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
@@ -53,12 +56,20 @@ public class Role implements Serializable {
     this.code = code;
   }
 
-  public String getAuthority() {
-    return authority;
+  public Double getTotal() {
+    return total;
   }
 
-  public void setAuthority(String authority) {
-    this.authority = authority;
+  public void setTotal(Double total) {
+    this.total = total;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 
   public EnumStatus getStatus() {
@@ -73,41 +84,30 @@ public class Role implements Serializable {
     return createdAt;
   }
 
+  public void setCreatedAt(Instant createdAt) {
+    this.createdAt = createdAt;
+  }
+
   public Instant getUpdatedAt() {
     return updatedAt;
   }
 
-  @PrePersist
-  public void preCreate(){
-    createdAt = Instant.now();
-    status = EnumStatus.ENABLED;
-  }
-
-  @PreUpdate
-  public void preUpdate(){
-    updatedAt = Instant.now();
+  public void setUpdatedAt(Instant updatedAt) {
+    this.updatedAt = updatedAt;
   }
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    Role role = (Role) o;
-    return id.equals(role.id) && code.equals(role.code);
+
+    ProductOrder that = (ProductOrder) o;
+
+    return id.equals(that.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, code);
+    return id.hashCode();
   }
-
-//  public void addRole(Role role){
-//    if(role != null && !getRoles().contains(role)) {
-//      getRoles().add(role);
-//
-//      if(!role.getAuthority().contains(this)) {
-//        role.getAuthority().add(this)
-//      }
-//    }
-//  }
 }

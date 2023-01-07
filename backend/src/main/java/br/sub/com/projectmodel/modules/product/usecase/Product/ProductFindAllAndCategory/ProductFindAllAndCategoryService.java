@@ -27,9 +27,7 @@ public class ProductFindAllAndCategoryService {
   public Page<ProductDTO> execute(Long categoryId, String name, PageRequest pageRequest){
     List<ProductCategory> categories = (categoryId == 0) ? null :
       List.of(categoryRepository.getReferenceById(categoryId));
-    Page<Product> entity = productRepository.search(categories, name, pageRequest);
-    productRepository.findProductsWithCategories(entity.getContent());
-    productRepository.findProductsWithImages(entity.getContent());
+    Page<Product> entity = productRepository.jpql(categories, name, pageRequest);
     return entity.map(dto -> new ProductDTO(dto, dto.getCategories(), dto.getImages()));
   }
 

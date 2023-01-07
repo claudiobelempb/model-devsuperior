@@ -7,6 +7,7 @@ import br.sub.com.projectmodel.modules.product.infra.repositories.ProductCategor
 import br.sub.com.projectmodel.modules.product.infra.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,11 +27,9 @@ public class ProductFindAllPageService {
   @Transactional(readOnly = true)
   public Page<ProductDTO> execute( Long categoryID, String name, Pageable pageable){
     List<ProductCategory> categories = (categoryID == 0) ? null :
-      List.of(categoryRepository.getReferenceById(categoryID));
-    Page<Product> entity = productRepository.search(categories, name, pageable);
-    productRepository.findProductsWithCategories(entity.getContent());
-    productRepository.findProductsWithImages(entity.getContent());
-    return entity.map(dto -> new ProductDTO(dto, dto.getCategories(), dto.getImages()));
+      Arrays.asList(categoryRepository.getReferenceById(categoryID));
+    Page<Product> entity = productRepository.jpql(categories, name, pageable);
+    return entity.map(dto -> new ProductDTO(dto));
   }
 
 }

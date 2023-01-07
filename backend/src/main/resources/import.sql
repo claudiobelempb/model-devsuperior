@@ -69,8 +69,8 @@ INSERT INTO tb_user_address_association (user_id, address_id) VALUES (1, 2);
 
 --tb_notification
 INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('946d72ea-7f99-47e3-9e9f-02cc59d09b89', 'Primeiro feedback de tarefa: favor revisar', 'true', '/offers/1/resource/1/sections/1', 1, NOW(), 0);
-INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('946e72ea-7f99-47e3-9e9f-02cc39d09b85', 'Segundo feedback: favor revisar', 'true', '/offers/1/resource/1/sections/1', 2, NOW(), 0);
-INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('966e72ea-7f99-47e3-9e9f-02cc39d09b89', 'Terceiro feedback: favor revisar', 'true', '/offers/1/resource/1/sections/1', 1, NOW(), 0);
+INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('946e72ea-7f99-47e3-9e9f-02cc39d09b85', 'Segundo feedback: favor revisar', 'true', '/offers/1/resource/1/sections/1', 1, NOW(), 0);
+INSERT INTO tb_notification (code, text, read, route, user_id, created_at, status) VALUES ('966e72ea-7f99-47e3-9e9f-02cc39d09b89', 'Terceiro feedback: favor revisar', 'false', '/offers/1/resource/1/sections/1', 1, NOW(), 0);
 
 
 --tb_course

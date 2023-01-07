@@ -21,10 +21,10 @@ public class NotificationUserService {
   private NotificationRepository repository;
 
   @Transactional(readOnly = true)
-  public Page<NotificationDTO> execute(Pageable pageable){
+  public Page<NotificationDTO> execute(boolean unreadOnly, Pageable pageable){
     //04-24 Conteúdo customizado para usuário logado
     User user = service.authenticated();
-    Page<Notification> notifications = repository.findByUser(user, pageable);
+    Page<Notification> notifications = repository.filterUnreadOnly(user, unreadOnly, pageable);
     return notifications.map(notification -> new NotificationDTO(notification));
   }
 }

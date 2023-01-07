@@ -5,35 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8234e7b4-584c-4e39-8f2e-3dfa10434632" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/dto/DeliverDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/dto/DeliverRevisionUpdateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/repositories/DeliverRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/usecase/DeliverRevisionUpdate/DeliverRevisionUpdateResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/usecase/DeliverRevisionUpdate/DeliverRevisionUpdateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/repositories/EnrollmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/lesson/infra/repositories/LessonRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/dto/NotificationDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/repositories/NotificationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindAll/NotificationFindAllResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindAll/NotificationFindAllService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindById/NotificationFindByIdResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationFindById/NotificationFindByIdService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationUser/NotificationUserResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/usecase/NotificationUser/NotificationUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/repositories/ReplyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/repositories/TopicRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserAuthService/UserAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/entities/Deliver.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/deliver/infra/entities/Deliver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/entities/Enrollment.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/enrollment/infra/entities/Enrollment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/entities/ProductOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/entities/ProductOrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/repositories/ProductOrderItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/repositories/ProductOrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/usecase/ProductCategory/ProductCategorySearchExemple/ProductCategorySearchExampleResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/usecase/ProductCategory/ProductCategorySearchExemple/ProductCategorySearchExampleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.production.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/entities/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/notification/infra/entities/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/offer/infra/entities/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/offer/infra/entities/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/entities/Reply.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/reply/infra/entities/Reply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/entities/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/topic/infra/entities/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/entities/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/product/infra/entities/ProductCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/role/infra/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/role/infra/entities/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/infra/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/infra/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserDetailsService/AppUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserDetailsService/AppUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserFindById/UserFindByIdService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/usecase/UserFindById/UserFindByIdService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/shared/config/AppResourceServerConfigurerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/shared/config/AppResourceServerConfigurerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/validation/UserUpdateValidator/UserUpdateValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/modules/user/validation/UserUpdateValidator/UserUpdateValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/br/sub/com/projectmodel/shared/constants/AppValidatorConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-developement.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +45,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/surb/Documents/workspace-projects/devsuperior/project-model/backend&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/surb/Documents/workspace-projects/devsuperior/project-model/backend",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

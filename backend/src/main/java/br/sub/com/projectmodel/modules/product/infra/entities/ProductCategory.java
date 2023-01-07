@@ -1,6 +1,7 @@
 package br.sub.com.projectmodel.modules.product.infra.entities;
 
 import br.sub.com.projectmodel.shared.enums.EnumStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serial;
@@ -28,6 +29,7 @@ public class ProductCategory implements Serializable {
   private Instant updatedAt;
   private EnumStatus status;
 
+  @JsonIgnore
   @ManyToMany(mappedBy = "categories")
   private final Set<Product> products = new HashSet<>();
 

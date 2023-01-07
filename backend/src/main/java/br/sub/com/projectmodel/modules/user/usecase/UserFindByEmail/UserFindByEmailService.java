@@ -30,4 +30,5 @@ public class UserFindByEmailService {
     UserProjections entity = obj.orElseThrow(() -> new AppEntityNotFoundException(AppExceptionConstants.ENTITY_NOT_FOUND + id));
     return new UserProjectionsDTO(entity);
   }
+
 }

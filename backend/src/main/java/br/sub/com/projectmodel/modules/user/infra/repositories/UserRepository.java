@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -26,6 +27,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     GROUP BY tb_user.first_name, tb_address.city, tb_address.street, tb_address.number, tb_address.district, tb_address.cep
   */
   User findByEmail(String email);
+
 
   @Query(nativeQuery = true, value = "SELECT email, code " +
     "FROM tb_user " +
