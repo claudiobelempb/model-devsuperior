@@ -1,25 +1,25 @@
 import styled, { css } from 'styled-components';
-import { afterDefault } from '../../../assets/themes/functions/afterDefault';
-import { beforeDefault } from '../../../assets/themes/functions/beforeDefault';
+import { afterDefault } from '../../assets/themes/functions/afterDefault';
+import { beforeDefault } from '../../assets/themes/functions/beforeDefault';
 import {
   borderDefault,
   borderRadiusDefault,
-} from '../../../assets/themes/functions/borderDefault';
-import { colorDefault } from '../../../assets/themes/functions/colorDefault';
-import { effectDefault } from '../../../assets/themes/functions/effectDefaults';
-import { flexDefault } from '../../../assets/themes/functions/flexDefault';
-import { fontDefault } from '../../../assets/themes/functions/fontDefault';
-import { gridDefault } from '../../../assets/themes/functions/gridDefault';
-import { heightDefault } from '../../../assets/themes/functions/heightDefault';
-import { marginDefault } from '../../../assets/themes/functions/marginDefault';
-import { paddingDefault } from '../../../assets/themes/functions/paddingDefault';
-import { positionDefault } from '../../../assets/themes/functions/positionDefault';
-import { textDefault } from '../../../assets/themes/functions/textDefault';
-import { utilsDefault } from '../../../assets/themes/functions/utilsDefault';
-import { widthDefault } from '../../../assets/themes/functions/widthDefault';
-import { TypeDefault } from '../../../assets/themes/TypeDefault';
+} from '../../assets/themes/functions/borderDefault';
+import { colorDefault } from '../../assets/themes/functions/colorDefault';
+import { effectDefault } from '../../assets/themes/functions/effectDefaults';
+import { flexDefault } from '../../assets/themes/functions/flexDefault';
+import { fontDefault } from '../../assets/themes/functions/fontDefault';
+import { gridDefault } from '../../assets/themes/functions/gridDefault';
+import { heightDefault } from '../../assets/themes/functions/heightDefault';
+import { marginDefault } from '../../assets/themes/functions/marginDefault';
+import { paddingDefault } from '../../assets/themes/functions/paddingDefault';
+import { positionDefault } from '../../assets/themes/functions/positionDefault';
+import { textDefault } from '../../assets/themes/functions/textDefault';
+import { utilsDefault } from '../../assets/themes/functions/utilsDefault';
+import { widthDefault } from '../../assets/themes/functions/widthDefault';
+import { TypeDefault } from '../../assets/themes/TypeDefault';
 
-export const BoxDefaultStyle = styled.div<TypeDefault>`
+export const CardContainerDefaultStyle = styled.div<TypeDefault>`
   ${({ theme, ...props }) => css`
     /* z-index: -30; */
     /* height: 100%; */
@@ -123,25 +123,33 @@ export const BoxDefaultStyle = styled.div<TypeDefault>`
         : theme.flexDefault({})
     }
 
-    // Small devices (landscape phones, 576px and up)
-    @media (min-width: 576px) {
-      /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
+    // sm applies to x-small devices (portrait phones, less than 576px)
+    @media (max-width: 320px) {
+
     }
 
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {
+    // md applies to small devices (landscape phones, less than 768px)
+    @media (min-width: 320px) and (max-width: 576px) {
+
     }
 
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {
+    // lg applies to medium devices (tablets, less than 992px)
+    @media (min-width: 576px) and (max-width: 768px) {
+
     }
 
-    // X-Large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {
+    // xl applies to large devices (desktops, less than 1200px)
+    @media (min-width: 768px) and (max-width: 992px) {
+
     }
 
-    // XX-Large devices (larger desktops, 1400px and up)
-    @media (min-width: 1400px) {
+    // xxl applies to x-large devices (large desktops, less than 1400px)
+    @media (min-width: 992px) and (max-width: 1200px) {
+
+    }
+    // xxl applies to x-large devices (large desktops, less than 1400px)
+    @media (min-width: 1200px) and (max-width: 1400px) {
+
     }
   `}
 `;

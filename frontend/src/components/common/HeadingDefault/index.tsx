@@ -6,7 +6,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h1':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.48 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.48 } }}
           {...props}
         >
           {children}
@@ -15,7 +15,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h2':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.5 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.5 } }}
           {...props}
         >
           {children}
@@ -24,7 +24,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h3':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.36 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.36 } }}
           {...props}
         >
           {children}
@@ -33,7 +33,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h4':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.24 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.24 } }}
           {...props}
         >
           {children}
@@ -42,7 +42,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h5':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.16 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.16 } }}
           {...props}
         >
           {children}
@@ -51,7 +51,7 @@ const HeadingDefault: React.FC<TypeDefault> = ({ children, ...props }) => {
     case 'h6':
       return (
         <Styled.HeadingDefaultContainer
-          fontDefault={{ fontSizeDynamic: { value: 0.1 } }}
+          fontDefault={{ fontSizeDynamic: { dynamic: 0.1 } }}
           {...props}
         >
           {children}

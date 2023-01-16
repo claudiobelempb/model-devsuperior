@@ -2,77 +2,6 @@ import { css } from 'styled-components';
 import { TypeThemeNumberDefault } from '../ThemeType';
 import { TypeVariant } from './colorDefault';
 
-/**
- *
-  fontSizeStatic?: TypeFontDefault;
-  fontSizeDynamic?: TypeFontDefault;
-  textTransform?: TypeFontDefault;
-  textAlign?: TypeFontDefault;
-  textTitle?: TypeFontDefault;
-  textParagraph?: TypeFontDefault;
-  fontFamily?: TypeFontDefault;
-  fontStyle?: TypeFontDefault;
-  fontLineHeight?: TypeFontDefault;
-  textLineThrough?: TypeFontDefault;
-
-  fontSizeStatic={props.fontSizeStatic}
-  fontSizeDynamic={props.fontSizeDynamic}
-  textTransform={props.textTransform}
-  textAlign={props.textAlign}
-  textTitle={props.textTitle}
-  textParagraph={props.textParagraph}
-  fontFamily={props.fontFamily}
-  fontStyle={props.fontStyle}
-  fontLineHeight={props.fontLineHeight}
-  textLineThrough={props.textLineThrough}
-
-  ${props.fontSizeStatic && props.fontSizeStaticDefault(props.fontSizeStatic)}
-  ${props.fontSizeDynamic && props.fontSizeDynamicDefault(props.fontSizeDynamic)}
-  ${props.textTransform && props.textTransformDefault(props.textTransform)}
-  ${props.textAlign && props.textAlignDefault(props.textAlign)}
-  ${props.textTitle && props.textTitleDefault(props.textTitle)}
-  ${props.textParagraph && props.textparagraphDefault(props.textParagraph)}
-  ${props.fontFamily && props.fontFamilyDefault(props.fontFamily)}
-  ${props.fontStyle && props.fontStyleDefault(props.fontStyle)}
-  ${props.fontLineHeight && props.fontLineHeightDefault(props.fontLineHeight)}
-  ${props.textLineThrough && props.textDecoretionlineThrough(props.textLineThrough)}
-
-
-  fontSizeStaticDefault?: () => FlattenSimpleInterpolation;
-  fontSizeDynamicDefault?: () => FlattenSimpleInterpolation;
-  textTransformDefault?: () => FlattenSimpleInterpolation;
-  textAlignDefault?: () => FlattenSimpleInterpolation;
-  tetxTitleDefault?: () => FlattenSimpleInterpolation;
-  textParagraphDefault?: () => FlattenSimpleInterpolation;
-  fontFamilyDefault?: () => FlattenSimpleInterpolation;
-  fontStyleDefault?: () => FlattenSimpleInterpolation;
-  fontLineHeightDefault?: () => FlattenSimpleInterpolation;
-  textDecoretionlineThrough?: () => FlattenSimpleInterpolation;
-
-  fontSizeStaticDefault={props.fontSizeStaticDefault}
-  fontSizeDynamicDefault={props.fontSizeDynamicDefault}
-  textTransformDefault={props.textTransformDefault}
-  textAlignDefault={props.textAlignDefault}
-  textTitleDefault={props.textTitleDefault}
-  textParagraphDefault={props.textParagraphDefault}
-  fontFamilyDefault={props.paddingTopDefault}
-  fontStyleDefault={props.fontStyleDefault}
-  fontLineHeightDefault={props.fontLineHeightDefault}
-  textDecoretionlineThrough={props.textDecoretionlineThrough}
-
-  ${props.fontSizeStaticDefault && props.fontSizeStaticDefault()}
-  ${props.fontSizeDynamicDefault && props.fontSizeDynamicDefault()}
-  ${props.textTransformDefault && props.textTransformDefault()}
-  ${props.textAlignDefault && props.textAlignDefault()}
-  ${props.textTitleDefault && props.textTitleDefault()}
-  ${props.textParagraphDefault && props.textparagraphDefault()}
-  ${props.fontFamilyDefault && props.fontFamilyDefault()}
-  ${props.fontStyleDefault && props.fontStyleDefault()}
-  ${props.fontLineHeightDefault && props.fontLineHeightDefault()}
-  ${props.textDecoretionlineThrough && props.textDecoretionlineThrough()}
-
-*/
-
 export type TypeFontDefault = {
   variant?: TypeVariant;
   unit?: 'px' | '%' | 'rem' | 'vw' | 'vh';
@@ -90,14 +19,14 @@ export type TypeFontDefault = {
 type TypeFontSizeStatic = {
   variant?: TypeVariant;
   unit?: 'px' | '%' | 'rem' | 'vw' | 'vh';
-  value?: TypeThemeNumberDefault;
+  static?: TypeThemeNumberDefault;
   dynamic?: TypeThemeNumberDefault;
 };
 
 type TypeFontSizeDynamic = {
   variant?: TypeVariant;
   unit?: 'px' | '%' | 'rem' | 'vw' | 'vh';
-  value?: TypeThemeNumberDefault;
+  static?: TypeThemeNumberDefault;
   dynamic?: TypeThemeNumberDefault;
 };
 
@@ -147,23 +76,21 @@ export const fontDefault = {
     `
     };
     ${
-      fontSizeStatic?.value &&
+      fontSizeStatic?.static &&
       css`
-      font-size: calc(10 * ${fontSizeStatic.value}${(fontSizeStatic.unit =
-        'rem')});
+      font-size: calc(10 * ${fontSizeStatic.static}${fontSizeStatic.unit});
     `
     };
     ${
-      fontSizeIcon?.value &&
+      fontSizeIcon?.static &&
       css`
-      font-size: calc(10 * ${fontSizeIcon.value}${(fontSizeIcon.unit = 'rem')});
+      font-size: calc(10 * ${fontSizeIcon.static}${fontSizeIcon.unit});
     `
     };
     ${
-      fontSizeDynamic?.value &&
+      fontSizeDynamic?.static &&
       css`
-      font-size: calc(10 * ${fontSizeDynamic.value}${(fontSizeDynamic.unit =
-        'vw')});
+      font-size: calc(10 * ${fontSizeDynamic.dynamic}${fontSizeDynamic.unit});
     `
     };
      ${

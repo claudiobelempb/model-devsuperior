@@ -24,11 +24,11 @@ import { TypeDefault } from '../../../assets/themes/TypeDefault';
 
 export const ContainerNavLink = styled.div<TypeDefault>`
   ${({ theme, ...props }) => css`
-    position: relative;
+    /* position: relative;
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center; */
     transition: all 0.25s ease-in;
     /* border: 3px solid transparent; */
     ${
@@ -47,6 +47,7 @@ export const ContainerNavLink = styled.div<TypeDefault>`
         : theme.flexDefault({
             flexDefault: 'flex',
             flexAlignItemsDefault: 'center',
+            flexJustifyContentDefault: 'center',
             flexGapDefault: { column: 1, row: 1, unit: 'rem' },
           })
     }
@@ -60,7 +61,7 @@ export const ContainerNavLink = styled.div<TypeDefault>`
     ${
       props.fontDefault
         ? fontDefault.fontDefault(props.fontDefault)
-        : theme.fontDefault({ fontSizeIcon: { value: 0.2, unit: 'rem' } })
+        : theme.fontDefault({ fontSizeStatic: { static: 0.1, unit: 'rem' } })
     }
     /*ICON DEFAULT */
     ${
@@ -116,10 +117,7 @@ export const ContainerNavLink = styled.div<TypeDefault>`
     ${
       props.paddingDefault
         ? paddingDefault.paddingDefault(props.paddingDefault)
-        : theme.paddingDefault({
-            paddingYStaticDefault: { vstatic: 0.2, unit: 'rem' },
-            paddingXStaticDefault: { vstatic: 0.1, unit: 'rem' },
-          })
+        : theme.paddingDefault({})
     };
     /* Margin Default */
     ${

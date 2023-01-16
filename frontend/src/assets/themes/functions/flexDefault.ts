@@ -76,7 +76,7 @@ export const flexDefault = {
     ${
       flexGapDefault &&
       css`
-      gap: ${flexGapDefault.row}${flexGapDefault.unit} ${flexGapDefault.column}${flexGapDefault.unit};
+      gap: calc(10 * ${flexGapDefault.row}${flexGapDefault.unit}) calc(10 * ${flexGapDefault.column}${flexGapDefault.unit});
     `
     };
     ${
@@ -143,7 +143,7 @@ export const flexDefault = {
 
     // xxl applies to x-large devices (large desktops, less than 1400px)
     @media (min-width: 992px) and (max-width: 1200px) {
-      flex-wrap: nowrap;
+
     }
     // xxl applies to x-large devices (large desktops, less than 1400px)
     @media (min-width: 1200px) and (max-width: 1400px) {

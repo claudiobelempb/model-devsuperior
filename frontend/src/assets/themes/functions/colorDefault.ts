@@ -9,7 +9,7 @@ export const VariantObjDefault = {
     v200: '#8e92af',
     v300: '#5a608b',
     v400: '#3a4175',
-    v500: '#091152',
+    v500: '#4D41C0',
     v600: '#080f4b',
     v700: '#060c3a',
     v800: '#05092d',
@@ -24,7 +24,7 @@ export const VariantObjDefault = {
     v200: '#fad591',
     v300: '#f8c25f',
     v400: '#f7b640',
-    v500: '#f5a410',
+    v500: '#FFBB3A',
     v600: '#df950f',
     v700: '#ae740b',
     v800: '#875a09',
@@ -39,7 +39,7 @@ export const VariantObjDefault = {
     v200: '#a2a4a7',
     v300: '#777b7f',
     v400: '#5d6166',
-    v500: '#343a40',
+    v500: '#4A4A4A',
     v600: '#2f353a',
     v700: '#25292d',
     v800: '#1d2023',
@@ -54,7 +54,7 @@ export const VariantObjDefault = {
     v200: '#ffffff',
     v300: '#ffffff',
     v400: '#ffffff',
-    v500: '#ffffff',
+    v500: '#989898 ',
     v600: '#e8e8e8',
     v700: '#b5b5b5',
     v800: '#8c8c8c',
@@ -492,6 +492,7 @@ export const colorDefault = {
         };
       &:hover {
         filter: brightness(0.9);
+        opacity: 0.6;
         cursor: pointer;
         background-color: ${
           VariantObjDefault[buttomColorDefalut.background.index][
@@ -506,6 +507,8 @@ export const colorDefault = {
        }
       &:disabled {
         filter: brightness(0.9);
+        cursor: not-allowed;
+        opacity: 0.6;
         background-color: ${
           VariantObjDefault[buttomColorDefalut.background.index][
             buttomColorDefalut.background.value
@@ -516,12 +519,11 @@ export const colorDefault = {
             buttomColorDefalut.color.value
           ]
         };
-        cursor: not-allowed;
-        opacity: 0.7;
        }
       &:not(:disabled):hover {
-        /* opacity: 1; */
+        opacity: 0.6;
         filter: brightness(0.9);
+        cursor: pointer;
         background-color: ${
           VariantObjDefault[buttomColorDefalut.background.index][
             buttomColorDefalut.background.value

@@ -14,14 +14,13 @@ import { TypeDefault } from '../../../assets/themes/TypeDefault';
 
 export const Container = styled.fieldset<TypeDefault>`
   ${({ theme, ...props }) => css`
-  display: flex;
 
   ${
     props.flexDefault
       ? flexDefault.flexDefault(props.flexDefault)
       : theme.flexDefault({
           flexDefault: 'flex',
-          flexAlignItemsDefault: 'center',
+          flexDirectionDefault: 'column',
           flexGrowDefault: 1,
         })
   }
@@ -53,7 +52,7 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
       ${props.heightDefault && heightDefault.heightDefault(props.heightDefault)}
       /*WIDTH DEFAULT  */
       ${props.widthDefault && widthDefault.widthDefault(props.widthDefault)}
-      padding: 1rem 2rem;
+      /* padding: 1rem 2rem; */
       /*BORDER DEFAULT */
       ${
         props.borderDefault
@@ -63,11 +62,6 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
                 width: 0.2,
                 style: 'solid',
                 unit: 'rem',
-                colorDefault: {
-                  borderColorDefalut: {
-                    color: { index: 'default', value: 'transparent' },
-                  },
-                },
               },
             })
       };
@@ -78,14 +72,13 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
           : theme.colorDefault({
               backgroundColorDefalut: { index: 'default', value: 'white' },
               colorDefalut: { index: 'gray', value: 'v500' },
+              borderColorDefalut: { color: { index: 'light', value: 'v500' } },
             })
       };
 
       ${
         props.hasError &&
         css`
-
-
         ${
           props.borderDefault
             ? borderDefault.borderDefault(props.borderDefault)
@@ -94,11 +87,6 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
                   width: 0.2,
                   style: 'solid',
                   unit: 'rem',
-                  colorDefault: {
-                    borderColorDefalut: {
-                      color: { index: 'red', value: 'v500' },
-                    },
-                  },
                 },
               })
         };
@@ -117,12 +105,7 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
             })
       };
 
-
-
-
-
       :focus {
-        /*BORDER DEFAULT */
         ${
           props.borderDefault
             ? borderDefault.borderDefault(props.borderDefault)
@@ -133,7 +116,7 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
                   unit: 'rem',
                   colorDefault: {
                     borderColorDefalut: {
-                      color: { index: 'green', value: 'v400' },
+                      color: { index: 'dark', value: 'v500' },
                     },
                   },
                 },
@@ -148,11 +131,6 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
                 borderRadiusDefault: {
                   width: 0.5,
                   unit: 'rem',
-                  colorDefault: {
-                    borderColorDefalut: {
-                      color: { index: 'red', value: 'v500' },
-                    },
-                  },
                 },
               })
         };
@@ -196,7 +174,10 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
     ${
       props.paddingDefault
         ? paddingDefault.paddingDefault(props.paddingDefault)
-        : theme.paddingDefault({})
+        : theme.paddingDefault({
+            paddingXStaticDefault: { static: 0.1, unit: 'rem' },
+            paddingYStaticDefault: { static: 0.1, unit: 'rem' },
+          })
     };
     /* Margin Default */
     ${
@@ -239,9 +220,6 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
             })
       };
 
-      border-radius: 0.5rem;
-      /* outline: none; *
-
        /*HEIGHT DEFAULT  */
       ${props.heightDefault && heightDefault.heightDefault(props.heightDefault)}
       /*WIDTH DEFAULT  */
@@ -253,10 +231,6 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
         ? flexDefault.flexDefault(props.flexDefault)
         : theme.flexDefault({})
     }
-
-      ${props.iconDefault && props.iconDefault()}
-
-
       /* Padding Default */
     ${
       props.paddingDefault
@@ -282,11 +256,7 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
           : theme.borderDefault.borderDefault({
               borderDefault: {
                 width: 3,
-                colorDefault: {
-                  borderColorDefalut: {
-                    color: { index: 'red', value: 'v500' },
-                  },
-                },
+                unit: 'rem',
               },
             })
       }
@@ -294,18 +264,8 @@ export const InputDefaultContainer = styled.input<TypeDefault>`
       ${
         props.borderRadiusDefault
           ? borderRadiusDefault.borderRadiusDefault(props.borderRadiusDefault)
-          : theme.borderDefault.borderDefault({
-              borderDefault: {
-                width: 3,
-                colorDefault: {
-                  borderColorDefalut: {
-                    color: { index: 'red', value: 'v500' },
-                  },
-                },
-              },
-            })
+          : theme.borderDefault.borderDefault({})
       };
-
     `}
 `;
 
@@ -318,14 +278,7 @@ export const LabelDefaultContainer = styled.label<TypeDefault>`
       props.colorDefault
         ? colorDefault.colorDefault(props.colorDefault)
         : theme.colorDefault({
-            focusColorDefalut: { color: { index: 'gray', value: 'v100' } },
-            placeholderColorDefalut: {
-              background: { index: 'default', value: 'transparent' },
-              color: { index: 'gray', value: 'v500' },
-            },
-            borderColorDefalut: { color: { index: 'blue', value: 'v500' } },
-            backgroundColorDefalut: { index: 'default', value: 'transparent' },
-            colorDefalut: { index: 'gray', value: 'v100' },
+            colorDefalut: { index: 'light', value: 'v500' },
           })
     };
 

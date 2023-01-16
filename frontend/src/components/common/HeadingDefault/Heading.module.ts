@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { colorDefault } from '../../../assets/themes/functions/colorDefault';
 import { fontDefault } from '../../../assets/themes/functions/fontDefault';
 import { heightDefault } from '../../../assets/themes/functions/heightDefault';
+import { paddingDefault } from '../../../assets/themes/functions/paddingDefault';
 import { textDefault } from '../../../assets/themes/functions/textDefault';
 import { widthDefault } from '../../../assets/themes/functions/widthDefault';
 import { TypeDefault } from '../../../assets/themes/TypeDefault';
@@ -15,6 +16,14 @@ export const HeadingDefaultContainer = styled.h1<TypeDefault>`
      ${props.heightDefault && heightDefault.heightDefault(props.heightDefault)}
     /*WIDTH DEFAULT  */
     ${props.widthDefault && widthDefault.widthDefault(props.widthDefault)}
+
+     /*PADDING DEFAULT */
+     ${
+       props.paddingDefault
+         ? paddingDefault.paddingDefault(props.paddingDefault)
+         : theme.paddingDefault({})
+     }
+
 
     /*TEXT DEFAULT */
     ${

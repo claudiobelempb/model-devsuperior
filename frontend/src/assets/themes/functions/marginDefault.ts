@@ -2,9 +2,8 @@ import { css } from 'styled-components';
 import { TypeThemeNumberDefault } from '../ThemeType';
 
 type TypeMarginDefault = {
-  value?: TypeThemeNumberDefault;
-  vstatic?: TypeThemeNumberDefault;
-  vdynamic?: TypeThemeNumberDefault;
+  static?: TypeThemeNumberDefault;
+  dynamic?: TypeThemeNumberDefault;
   unit?: 'px' | '%' | 'rem' | 'vw' | 'vh';
 };
 
@@ -33,51 +32,51 @@ export const marginDefault = {
     ${
       marginStaticDefault &&
       css`
-      margin: ${marginStaticDefault.vstatic}rem;
+      margin: calc(10 * ${marginStaticDefault.static}${marginStaticDefault.unit});
     `
     };
     ${
       marginTopStaticDefault &&
       css`
-      margin-top: ${marginTopStaticDefault.vstatic}rem;
+      margin-top: calc(10 * ${marginTopStaticDefault.static}${marginTopStaticDefault.unit});
     `
     };
     ${
       marginRightStaticDefault &&
       css`
-      margin-right: ${marginRightStaticDefault.vstatic}rem;
+      margin-right: calc(10 * ${marginRightStaticDefault.static}${marginRightStaticDefault.unit});
     `
     };
     ${
       marginLeftStaticDefault &&
       css`
-      margin-left: ${marginLeftStaticDefault.vstatic}rem;
+      margin-left: calc(10 * ${marginLeftStaticDefault.static}${marginLeftStaticDefault.unit});
     `
     };
     ${
       marginBottomStaticDefault &&
       css`
-      margin-bottom: ${marginBottomStaticDefault.vstatic}rem;
+      margin-bottom: calc(10 * ${marginBottomStaticDefault.static}${marginBottomStaticDefault.unit});
     `
     };
     ${
       marginXStaticDefault &&
       css`
-      margin-right: ${marginXStaticDefault.vstatic}rem;
-      margin-left: ${marginXStaticDefault.vstatic}rem;
+      margin-right: calc(10 * ${marginXStaticDefault.static}${marginXStaticDefault.unit});
+      margin-left: calc(10 * ${marginXStaticDefault.static}${marginXStaticDefault.unit});
     `
     };
     ${
       marginYStaticDefault &&
       css`
-      margin-top: ${marginYStaticDefault.vstatic}rem;
-      margin-bottom: ${marginYStaticDefault.vstatic}rem;
+      margin-top: calc(10 * ${marginYStaticDefault.static}${marginYStaticDefault.unit});
+      margin-bottom: calc(10 * ${marginYStaticDefault.static}${marginYStaticDefault.unit});
     `
     };
     ${
       marginDynamicDefault &&
       css`
-      margin: calc(${marginDynamicDefault.vstatic}rem + ${marginDynamicDefault.vdynamic}vw);
+      margin: calc(10 * ${marginDynamicDefault.static}rem + ${marginDynamicDefault.dynamic}vw);
     `
     };
   `,

@@ -263,6 +263,7 @@ export const ThemeDefault = {
         };
       input:hover {
         filter: brightness(0.9);
+        cursor: pointer;
         background-color: ${
           VariantObjDefault[inputColorDefalut.background.index][
             inputColorDefalut.background.value
@@ -276,6 +277,8 @@ export const ThemeDefault = {
        }
       input:disabled {
         filter: brightness(0.9);
+        cursor: not-allowed;
+        opacity: 0.7;
         background-color: ${
           VariantObjDefault[inputColorDefalut.background.index][
             inputColorDefalut.background.value
@@ -286,11 +289,10 @@ export const ThemeDefault = {
             inputColorDefalut.color.value
           ]
         };
-        cursor: not-allowed;
-        opacity: 0.7;
        }
       input:not(:disabled):hover {
         /* opacity: 1; */
+        cursor: pointer;
         filter: brightness(0.9);
         background-color: ${
           VariantObjDefault[inputColorDefalut.background.index][
@@ -479,57 +481,57 @@ export const ThemeDefault = {
     paddingXStaticDefault,
     paddingYStaticDefault,
   }: TypePaddingDefaultProps) => css`
-    ${
-      paddingStaticDefault &&
-      css`
-      padding: ${paddingStaticDefault.vstatic}rem;
-    `
-    };
-    ${
-      paddingTopStaticDefault &&
-      css`
-      padding-top: ${paddingTopStaticDefault.vstatic}rem;
-    `
-    };
-    ${
-      paddingRightStaticDefault &&
-      css`
-      padding-right: ${paddingRightStaticDefault.vstatic}rem;
-    `
-    };
-    ${
-      paddingLeftStaticDefault &&
-      css`
-      padding-left: ${paddingLeftStaticDefault.vstatic}rem;
-    `
-    };
-    ${
-      paddingBottomStaticDefault &&
-      css`
-      padding-bottom: ${paddingBottomStaticDefault.vstatic}rem;
-    `
-    };
-    ${
-      paddingXStaticDefault &&
-      css`
-      padding-right: calc(10 * ${paddingXStaticDefault.vstatic}${paddingXStaticDefault.unit});
-      padding-left: calc(10 * ${paddingXStaticDefault.vstatic}${paddingXStaticDefault.unit});
-    `
-    };
-    ${
-      paddingYStaticDefault &&
-      css`
-      padding-top: calc(10 * ${paddingYStaticDefault.vstatic}${paddingYStaticDefault.unit});
-      padding-bottom: calc(10 * ${paddingYStaticDefault.vstatic}${paddingYStaticDefault.unit});
-    `
-    };
-    ${
-      paddingDynamicDefault &&
-      css`
-      padding: calc(${paddingDynamicDefault.vstatic}rem + ${paddingDynamicDefault.vdynamic}vw);
-    `
-    };
-  `,
+  ${
+    paddingStaticDefault &&
+    css`
+    padding: calc(10 * ${paddingStaticDefault.static}${paddingStaticDefault.unit}) calc(10 * ${paddingStaticDefault.static}${paddingStaticDefault.unit});
+  `
+  };
+  ${
+    paddingTopStaticDefault &&
+    css`
+    padding-top: calc(10 * ${paddingTopStaticDefault.static}${paddingTopStaticDefault.unit});
+  `
+  };
+  ${
+    paddingRightStaticDefault &&
+    css`
+    padding-right: calc(10 * ${paddingRightStaticDefault.static}${paddingRightStaticDefault.unit});
+  `
+  };
+  ${
+    paddingLeftStaticDefault &&
+    css`
+    padding-left: calc(10 * ${paddingLeftStaticDefault.static}${paddingLeftStaticDefault.unit});
+  `
+  };
+  ${
+    paddingBottomStaticDefault &&
+    css`
+    padding-bottom: calc(10 * ${paddingBottomStaticDefault.static}${paddingBottomStaticDefault.unit});
+  `
+  };
+  ${
+    paddingXStaticDefault &&
+    css`
+    padding-right: calc(10 * ${paddingXStaticDefault.static}${paddingXStaticDefault.unit});
+    padding-left: calc(10 * ${paddingXStaticDefault.static}${paddingXStaticDefault.unit});
+  `
+  };
+  ${
+    paddingYStaticDefault &&
+    css`
+    padding-top: calc(10 * ${paddingYStaticDefault.static}${paddingYStaticDefault.unit});
+    padding-bottom: calc(10 * ${paddingYStaticDefault.static}${paddingYStaticDefault.unit});
+  `
+  };
+  ${
+    paddingDynamicDefault &&
+    css`
+    padding: calc(10 * ${paddingDynamicDefault.static}rem + ${paddingDynamicDefault.dynamic}${paddingDynamicDefault.unit});
+  `
+  };
+`,
   marginDefault: ({
     marginStaticDefault,
     marginDynamicDefault,
@@ -543,51 +545,51 @@ export const ThemeDefault = {
     ${
       marginStaticDefault &&
       css`
-      margin: ${marginStaticDefault.vstatic}rem;
+      margin: calc(10 * ${marginStaticDefault.static}${marginStaticDefault.unit});
     `
     };
     ${
       marginTopStaticDefault &&
       css`
-      margin-top: ${marginTopStaticDefault.vstatic}rem;
+      margin-top: calc(10 * ${marginTopStaticDefault.static}${marginTopStaticDefault.unit});
     `
     };
     ${
       marginRightStaticDefault &&
       css`
-      margin-right: ${marginRightStaticDefault.vstatic}rem;
+      margin-right: calc(10 * ${marginRightStaticDefault.static}${marginRightStaticDefault.unit});
     `
     };
     ${
       marginLeftStaticDefault &&
       css`
-      margin-left: ${marginLeftStaticDefault.vstatic}rem;
+      margin-left: calc(10 * ${marginLeftStaticDefault.static}${marginLeftStaticDefault.unit});
     `
     };
     ${
       marginBottomStaticDefault &&
       css`
-      margin-bottom: ${marginBottomStaticDefault.vstatic}rem;
+      margin-bottom: calc(10 * ${marginBottomStaticDefault.static}${marginBottomStaticDefault.unit});
     `
     };
     ${
       marginXStaticDefault &&
       css`
-      margin-right: ${marginXStaticDefault.vstatic}rem;
-      margin-left: ${marginXStaticDefault.vstatic}rem;
+      margin-right: calc(10 * ${marginXStaticDefault.static}${marginXStaticDefault.unit});
+      margin-left: calc(10 * ${marginXStaticDefault.static}${marginXStaticDefault.unit});
     `
     };
     ${
       marginYStaticDefault &&
       css`
-      margin-top: ${marginYStaticDefault.vstatic}rem;
-      margin-bottom: ${marginYStaticDefault.vstatic}rem;
+      margin-top: calc(10 * ${marginYStaticDefault.static}${marginYStaticDefault.unit});
+      margin-bottom: calc(10 * ${marginYStaticDefault.static}${marginYStaticDefault.unit});
     `
     };
     ${
       marginDynamicDefault &&
       css`
-      margin: calc(${marginDynamicDefault.vstatic}rem + ${marginDynamicDefault.vdynamic}vw);
+      margin: calc(10 * ${marginDynamicDefault.static}rem + ${marginDynamicDefault.dynamic}vw);
     `
     };
   `,
@@ -640,15 +642,15 @@ export const ThemeDefault = {
     `
     };
     ${
-      fontSizeIcon?.value &&
+      fontSizeIcon?.static &&
       css`
-      font-size: calc(10 * ${fontSizeIcon.value}${(fontSizeIcon.unit = 'rem')});
+      font-size: calc(10 * ${fontSizeIcon.static}${fontSizeIcon.unit});
     `
     };
     ${
       fontSizeDynamic &&
       css`
-      font-size: calc(10 * ${value}${(unit = 'vw')});
+      font-size: calc(10 * ${fontSizeDynamic.dynamic}${fontSizeDynamic.unit});
     `
     };
      ${

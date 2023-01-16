@@ -22,7 +22,6 @@ export const ContentDefaultStyle = styled.div<TypeDefault>`
   ${({ theme, ...props }) => css`
     position: relative;
     display: flex;
-    flex-direction: column;
     margin: 0 auto;
     width: 90%;
     /* height: 100%; */
@@ -92,6 +91,32 @@ export const ContentDefaultStyle = styled.div<TypeDefault>`
       props.flexDefault
         ? flexDefault.flexDefault(props.flexDefault)
         : theme.flexDefault({})
+    }
+
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 576px) {
+
+      /* grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); */
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (max-width: 768px) {
+
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px){
+
+    }
+
+    // X-Large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+
+    }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {
+
     }
   `}
 `;

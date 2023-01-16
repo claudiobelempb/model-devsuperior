@@ -10,9 +10,15 @@ export function LinkDefault({ ...props }: LinkDefaultProps) {
   switch (props.target) {
     case '_blank':
       return (
-        <a title={props.title} href={props.href} target={props.target}>
-          <ContainerNavLink {...props}>{props.children}</ContainerNavLink>
-        </a>
+        <ContainerNavLink {...props}>
+          <NavLink
+            title={props.title}
+            to={props.href ? props.href : '/'}
+            target={props.target}
+          >
+            {props.children}
+          </NavLink>
+        </ContainerNavLink>
       );
 
     default:
@@ -22,7 +28,10 @@ export function LinkDefault({ ...props }: LinkDefaultProps) {
           to={props.href ? props.href : ''}
           target={props.target}
         >
-          <ContainerNavLink {...props}>{props.children}</ContainerNavLink>
+          <ContainerNavLink {...props}>
+            {props.title}
+            {props.children}
+          </ContainerNavLink>
         </NavLink>
       );
   }
